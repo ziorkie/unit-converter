@@ -1,0 +1,100 @@
+@startuml
+
+class Kierowca{
+-imie : String
+-nazwisko : String
+-dataUr : String
+-miejsceUr : String
+-pesel : String
+-adres : String
+-danePJ : PrawoJazdy
+-wykroczenia : ArrayList<wykroczenie>
+-Zdarzenia : ArrayList<Event>
+-wykroczeniePunkty : int
+-czyNowyKierowca : boolean
+
+-sprawdzKomendanta(adres) : String
+-dodajWykroczenie(String nazwaWykroczenie)
+-dodajZdarzenie(Zdarzenia)
+-czySkonfiskowane(wykroczeniePunkty, czyNowyKierowca) : boolean
+-zmianaTypuKierowcy(czyNowyKierowca) : void
+-resetPoints(wykroczenia, wykroczeniePoints) : void
++getImie() : String
++getNazwisko() : String
++getDataUr() : String
++getMiejsceUr() : String
++getPesel() : String
++getAdres() : String
++getDanePJ() : PrawoJazdy
++getWykroczenia() : ArrayList<wykroczenie>
++getZdarzenia() : ArrayList<Event>
++getWykroczeniePunkty() : int
++getCzyNowyKierowca() : boolean
+
+}
+
+class Kierowcy{
+-kierowcy : ArrayList<Kierowca>
+
++dodajKierowce(imie, nazwisko, dataUr, miejsceUr,\n pesel, adres, danePJ, wykroczenia) : void
++edytujKierowce()
+#usunKierowce()
+}
+
+class PrawoJazdy{
+-dataNadaniaUprawnien : Date
+-dataWygasnieciaUprawnien : Date
+-organNadajacy : String
+-nrDok : String
+-wydawcaDokumentu : String
+-dataWaznosci : Date
+
++getDataNadaniaUprawnien() : Date
++getDataWygasnieciaUprawnien() : Date
++getOrganNadajacy() : String
++getNrDok() : String
++getWydawcaDokumentu() : String
++getDataWaznosci() : Date
+}
+enum typZdarzenia{
+zatrzymanie
+cofniecieUprawnien
+utrata
+orzeczenie
+}
+
+class Zdarzenie{
+-rodzajZdarzenia : typZdarzenia
+-dataZdarzenia : Date
+-dataWygasnieciaZdarzenia : Date
+-opisZdarzenia : String
+
++getRodzajZdarzenia() : typEventu
++getDataZdarzenia() : Date
++getDataWygasnieciaZdarzenia() : Date
++getOpisZdarzenia() : String
+
+}
+
+    class Wykroczenia{
+
+    -listaWykroczen : ArrayList<Wykroczenie>
+    +addWykroczenia(Wykroczenie) : void
+    +editWykroczenia(Wykroczenie):void
+    #removeWykroczenia(Wykroczenie):void
+    +getWykroczenie(nazwaWykroczenie) : String
+
+    }
+
+    class Wykroczenie{
+    -nazwaWykroczenie : String
+    -punktyWykroczenie : int
+    }
+typZdarzenia->Zdarzenie
+Kierowcy --o Kierowca
+Kierowca --o Wykroczenie
+Wykroczenia --o Wykroczenie
+Kierowca --o PrawoJazdy
+Kierowca --o Zdarzenie
+
+@enduml

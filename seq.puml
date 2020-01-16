@@ -1,0 +1,26 @@
+@startuml
+actor User
+main -> primaryStage: generate
+primaryStage->primaryStage: generate UI
+User->primaryStage:Naciśnięcie przycisku\n z kategorią
+primaryStage->controller:wywołanie przypisanej do przycisku funkcji
+controller->controller:odblokowanie wyboru jednostek \n bazowych danej kategorii
+controller->primaryStage:wypisanie prośby o \nwybranie jednostki bazowej
+User->primaryStage:naciśnięcie przycisku z\n jednostką bazową
+primaryStage->controller:wywołanie przypisanej do przycisku funkcji
+controller->controller:odblokowanie pola input
+controller->primaryStage:wypisanie prośby o \nwpisanie wartości do\nprzekonwertowania
+User->primaryStage:wpisanie wartości do pola input
+User->primaryStage:wciśnięcie przycisku KONWERTUJ
+primaryStage->controller:wywolanie funkcji sprawdzajacej\nnumerycznosc stringa
+controller->primaryStage:jesli string nie jest numeryczny\nto zostaje wypisana prosba o\nzmianę wprowadzonych danych na poprawne
+primaryStage->controller:wywołanie przypisanej do przycisku funkcji
+primaryStage->controller:przesłanie wpisanego przez usera stringa
+controller->unit:stworzenie obiektu unit
+unit->controller:zwrócenie obiektu unit
+controller->converter:konwersja obiektu unit na\npozostałe  możliwe jednostki
+converter->controller:zwrot przekonwertowanych jednostek
+controller->primaryStage:wypisanie przekonwertowanych\nwartości
+User->main:zamknięcie programu\nprzy użyciu interfejsu\nsystemu(X)
+
+@enduml

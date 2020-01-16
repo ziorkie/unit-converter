@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="499.0" y="0.0">sample.Main</node>
+    <node x="278.0" y="117.0">app.Unit</node>
+    <node x="33.0" y="0.0">app.Converter</node>
+    <node x="0.0" y="158.0">sample.Controller</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="sample.Controller" target="app.Unit">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="app.Converter" target="app.Unit">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="sample.Controller" target="app.Converter">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.9681318681318681" x="236.33728214485836" y="472.1850170261067" />
+  <SelectedNodes>
+    <node>sample.Main</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

@@ -1,0 +1,82 @@
+@startuml
+
+abstract class AbstractList
+abstract AbstractCollection
+interface List
+interface Collection
+
+List <|-- AbstractList
+Collection <|-- AbstractCollection
+
+Collection <|- List
+AbstractCollection <|- AbstractList
+AbstractList <|-- ArrayList
+
+class ArrayList {
+Object[] elementData
+size()
+}
+
+enum TimeUnit {
+DAYS
+HOURS
+MINUTES
+}
+Controller<|-Main
+
+class Controller{
+
+ P1:Button;
+ P2:Button;
+ P3:Button;
+ P4:Button;
+ P5:Button;
+ M1:Button;
+ M2:Button;
+ M3:Button;
+ W1:Button;
+ W2:Button;
+ W3:Button;
+ V1:Button;
+ V2:Button;
+ V3:Button;
+
+    private TextArea O1;
+    private TextField I1;
+    private GridPane gridmiary;
+    private GridPane gridwagi;
+    private GridPane gridpredkosci;
+    private GridPane gridWyboru;
+    private double value;
+    value:double;
+    private static DecimalFormat df = new DecimalFormat("0.00");
+    public void restart();
+    public void buttonP1();
+    public void buttonP2();
+    public void buttonP3();
+    public void buttonP4();
+    public void buttonP5();
+    public void buttonM1();
+    public void buttonM2();
+    public void buttonM3();
+    public void buttonW1();
+    public void buttonW2();
+    public void buttonW3();
+    public void buttonV1();
+    public void buttonV2();
+    public void buttonV3();
+
+
+}
+
+class Main{
+public class Main extends Application;
+public void start(Stage primaryStage);
+ public static void main(String[] args);
+
+}
+class Converter{
+
+}
+
+@enduml
